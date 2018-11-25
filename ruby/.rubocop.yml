@@ -1,3 +1,4 @@
 AllCops:
   Exclude:
     - 'lib/inventory.rb'
+    - 'spec/spec_helper.rb'
