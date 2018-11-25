@@ -43,6 +43,10 @@ class GildedRose
           item.quality = item.quality + 1 if item.quality < 50
         end
       end
+      if item.name.include? 'Conjured'
+        item.sell_in > 0 ? item.quality -= 1 : item.quality -= 2
+        # item.quality -= 1 if item.sell_in > 0
+      end
     end
   end
 end
