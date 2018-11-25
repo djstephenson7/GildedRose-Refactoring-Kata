@@ -13,16 +13,17 @@ class GildedRose
         item.quality = 0 if item.quality < 0
       end
       if item.name == 'Aged Brie'
-        item.quality += item.sell_in > 0 ? 1 : 2
+        item.quality += item.sell_in >= 0 ? 1 : 2
         item.quality = 50 if item.quality > 50
       end
       if item.name == 'Backstage passes to a TAFKAL80ETC concert'
         item.quality += item.sell_in < 10 ? 2 : 1
         item.quality += 1 if item.sell_in < 5
         item.quality = 0 if item.sell_in < 0
+        item.quality = 50 if item.quality > 50
       end
       if item.name.include? 'Conjured'
-        item.quality -= item.sell_in > 0 ? 2 : 4
+        item.quality -= item.sell_in >= 0 ? 2 : 4
       end
     end
   end
