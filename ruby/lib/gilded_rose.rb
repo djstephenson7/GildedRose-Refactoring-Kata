@@ -7,7 +7,11 @@ class GildedRose
   end
 
   def new_day
-    @item.each {|item| item.sell_in -= 1 }
+    @item.each { |item| item.sell_in -= 1 }
+  end
+
+  def update_quality
+    @item.each { |item| item.quality -= 1 }
   end
 
   # def update_quality
